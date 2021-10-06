@@ -1,0 +1,26 @@
+<div class="container">
+    <!--  TODO text area to add  -->
+    <form role="form" [formGroup]="todoFrom" (ngSubmit)="submitTodoItem()">
+        <div class="col todoList_div p-1">
+            <label for="todo" class="pt-1 m-2">To-Do Item :</label>
+            <textarea class="form-control todo_item_input m-2" placeholder="Enter To-Do Item" id="todo"
+                formControlName="todo" type="text"></textarea>
+            <button type="submit" class="btn btn-primary m-2">Add</button>
+        </div>
+        <div *ngIf="f.todo.touched && f.todo.invalid" class="alert alert-danger error-message-b-10">
+            <div *ngIf="f.todo.errors?.required">Todo item is required.</div>
+        </div>
+    </form>
+</div>
+<!-- TODO list -->
+<div class="container">
+    <div class="todo-items-list pd-10">
+        <div class="card" *ngIf="todoList.length > 0">
+            <ul class="list-group list-group-flush" *ngFor="let todoItem of todoList">
+                <li class="list-group-item m-2" *ngIf="todoItem.isCompeted == false">
+                    {{todoItem.todo}} <i class="bi bi-trash" (click)="deleteTodoItem(todoItem.Id)"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

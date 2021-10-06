@@ -1,0 +1,31 @@
+.container {
+    background-color: #dceaeb;
+}
+
+.todoList_div {
+    display: flex;
+}
+
+.todo_item_input{
+    width: 75%;
+}
+
+textarea{
+    max-height: 100px;
+}
+
+.error-message-b-10 {
+    position: relative;
+    bottom: 8px;
+}
+
+
+.todo-items-list{
+    background-color: #a5b6b7;
+    min-height: 500px;
+}
+
+.bi-trash{
+    float: right;
+    font-size: 25px;
+}
